@@ -15,6 +15,7 @@ server.post('/usuario/login', async (req, resp) => {
 
     catch (err) { 
         resp.status(401).send
+        
         ({
              erro: err.message }); 
 }})
