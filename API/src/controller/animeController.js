@@ -1,4 +1,4 @@
-import { inserirAnime,buscarAnime,buscarPorTodosAN  } from "../repository/animeRepositoty.js";
+import { inserirAnime,buscarAnime,buscarPorTodesAN  } from "../repository/animeRepositoty.js";
 
 import { Router } from 'express'
 const server = Router();
@@ -25,11 +25,9 @@ server.post('/anime', async (req, resp) =>{
 server.get('/anime/:id', async (req, resp) => {
     try {
         const id = req.params.id;
-        const buscar = await buscarAnime(id);
+        const busca = await buscarAnime(id);
 
-        resp.send({
-            anime:buscar
-        })
+        resp.send({anime:busca})
     } 
     catch (err) {
         resp.status(404).send({
@@ -38,13 +36,12 @@ server.get('/anime/:id', async (req, resp) => {
     }
 });
 
-server.get('/anime/', async (resp) => {
+server.get('/anime/', async (req,resp) => {
     try {
-        const buscar = await buscarPorTodosAN();
 
-        resp.send({
-            anime:buscar
-        })
+        const buscar = await buscarPorTodesAN();
+
+        resp.send({anime:buscar})
     } 
     catch (err) {
         resp.status(404).send({

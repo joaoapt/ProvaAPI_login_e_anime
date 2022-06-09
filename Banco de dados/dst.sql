@@ -15,8 +15,8 @@ select id_usuario 		id,
 
 
 -- adicionar anime
-INSERT INTO tb_anime (id_anime, nm_anime)
-     VALUES (1, 'Dragon ball');
+INSERT INTO tb_anime (nm_anime)
+     VALUES ('Dragon ball');
 
 select id_anime      id,
 		nm_anime	nome

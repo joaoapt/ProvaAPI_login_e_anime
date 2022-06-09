@@ -1,12 +1,10 @@
-import 'dotenv/config';
+import 'dotenv/config'
 
 import usuarioController from './controller/usuarioController.js'; 
 import animeController from './controller/animeController.js';
 
 import express from 'express' 
 import cors from 'cors';
-
-
 
 const server = express();
 server.use(cors());
