@@ -4,20 +4,22 @@ const server = Router();
 
 
 server.post('/usuario/login', async (req, resp) => { 
-    try { 
-    const { email, senha } = req.body; 
-    
-    const resposta = await login(email, senha);
+    try {
+        const { email, senha } = req.body;
         
-    if (!resposta) {
-            throw new Error('Credenciais inválidas'); } 
-        resp.send(resposta) } 
+        const resposta = await login(email, senha);
+        if (!resposta) {
+            throw new Error('Credenciais inválidas');
+        }
 
-    catch (err) { 
-        resp.status(401).send
-        ({
-             erro: err.message }); 
-}})
+        resp.send(resposta)
+
+    } catch (err) {
+        resp.status(401).send({
+            erro: err.message
+        });
+    }
+})
 
 
 

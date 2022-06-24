@@ -7,8 +7,8 @@ select id_usuario          id,
         ds_email            email  
 from    tb_usuario   
 where   ds_email            = ? 
-and     ds_senha            = ? `;
+and     ds_senha            = ? `
 const [linhas] = await con.query(comando [email, senha])
 
-return linhas[0]; 
+return linhas[0];
 }
